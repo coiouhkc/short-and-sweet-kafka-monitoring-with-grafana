@@ -11,7 +11,7 @@ public class WordProducer {
     @Outgoing("string-out")
     public Multi<String> generate() {
         return Multi.createFrom()
-                .ticks().every(Duration.ofMillis(100))
+                .ticks().every(Duration.ofSeconds(5L))
                 .map(i -> "word" + i);
     }
 }

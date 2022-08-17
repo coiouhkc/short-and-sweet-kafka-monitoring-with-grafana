@@ -5,3 +5,7 @@ scrape_configs:
     metrics_path: /metrics
     static_configs:
       - targets: [ 'jmx-exporter:5556' ]
+  - job_name: 'kafka-lag-exporter'
+    metrics_path: /metrics
+    static_configs:
+      - targets: [ 'kafka-lag-exporter:8000' ]

@@ -61,3 +61,13 @@ services:
       - "5556:5556"
     volumes:
       - ./config.yaml:/opt/bitnami/jmx-exporter/example_configs/httpserver_sample_config.yml
+
+  kafka-lag-exporter:
+    image: seglo/kafka-lag-exporter:0.7.1
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./application.conf:/opt/docker/conf/application.conf
+      - ./logback.xml:/opt/docker/conf/logback.xml
+    links:
+      - kafka
